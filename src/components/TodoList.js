@@ -3,13 +3,36 @@ import TodosContext from '../context';
 
 export default function TodoList(){
     const { state } = useContext(TodosContext);
+    const title = state.todos.length > 0 ? `${state.todos.length} Todos` : "Nothing To Do";
 
     return (
-        <div>
-            <ul>
+        <div className="container mx-auto max-w-md text-center">
+            <h1 className="text-bold text-4xl">{title}</h1>
+            <ul className="list-reset text-white p-0">
                 {state.todos.map(todo => (
-                    <li key={todo.id}>
-                        <span>{todo.text}</span>
+                    <li 
+                        key={todo.id}
+                        className="flex items-center bg-gray-400 my-2 py-4"
+                    >
+                        <span
+                            className="flex-1 ml-12 cursor-pointer"
+                        >
+                            {todo.text}
+                            <button>
+                                <img 
+                                    src="https://icon.now.sh/edit/0050c5" 
+                                    alt="Edit Icon"
+                                    className="px-2 h-4"
+                                />
+                            </button>
+                            <button>
+                                <img 
+                                    src="https://icon.now.sh/delete/8b0000" 
+                                    alt="Delete Icon"
+                                    className="px-2 h-4"
+                                />
+                            </button>
+                        </span>
                     </li>
                 ))}
             </ul>
