@@ -3,7 +3,7 @@ import TodosContext from '../context';
 
 export default function TodoList(){
     const { state, dispatch } = useContext(TodosContext);
-    const title = state.todos.length > 0 ? `${state.todos.length} Todos` : "Nothing To Do";
+    const title = state.todos.length > 0 ? `${state.todos.length} Todos` : "Nothing To Do!";
 
     return (
         <div className="container mx-auto max-w-md text-center">
