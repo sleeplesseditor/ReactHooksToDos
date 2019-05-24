@@ -19,21 +19,23 @@ export default function TodoList(){
                             className={`flex-1 ml-12 cursor-pointer ${todo.complete && "line-through text-black"}`}
                         >
                             {todo.text}
-                            <button>
-                                <img 
-                                    src="https://icon.now.sh/edit/0050c5" 
-                                    alt="Edit Icon"
-                                    className="px-2 h-4"
-                                />
-                            </button>
-                            <button>
-                                <img 
-                                    src="https://icon.now.sh/delete/8b0000" 
-                                    alt="Delete Icon"
-                                    className="px-2 h-4"
-                                />
-                            </button>
                         </span>
+                        <button>
+                            <img 
+                                src="https://icon.now.sh/edit/0050c5" 
+                                alt="Edit Icon"
+                                className="px-2 h-4"
+                            />
+                        </button>
+                        <button
+                            onClick={() => dispatch({ type: "REMOVE_TODO", payload: todo })}
+                        >
+                            <img 
+                                src="https://icon.now.sh/delete/8b0000" 
+                                alt="Delete Icon"
+                                className="px-2 h-4"
+                            />
+                        </button>
                     </li>
                 ))}
             </ul>
