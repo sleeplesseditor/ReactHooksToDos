@@ -5,7 +5,8 @@ const TodosContext = React.createContext({
         { id: 1, text: "Kick Ass", complete: false },
         { id: 2, text: "Chew Bubblegum", complete: true },
         { id: 3, text: "Acquire More Bubblegum", complete: false },
-    ]
+    ],
+    currentTodo: {}
 })
 
 export default TodosContext;
